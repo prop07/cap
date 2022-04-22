@@ -1,0 +1,20 @@
+import React from "react";
+
+
+
+
+//components
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+
+const Home = () => {
+  return (
+    <div>
+      <Navbar />
+      <Footer/>
+    </div>
+  );
+};
+
+export default Home;

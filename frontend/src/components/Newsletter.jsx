@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-  background-color: #5de263;
+  background-color: #BADED0;
   padding: 1rem;
   margin: auto;
 `;
@@ -41,7 +41,7 @@ const InputContainer = styled.div`
 const Input = styled.input`
   border: none;
   padding-left: 20px;
-  background-color: #f3f3f3;
+  background-color: white;
   border-radius: 10px 0 0 10px;
   font-size: 1rem;
   &:focus {
@@ -51,7 +51,7 @@ const Input = styled.input`
 
 const Button = styled.button`
   border: none;
-  background-color: #f3f3f3;
+  background-color: white;
   border-radius: 0 10px 10px 0;
   border-left: 2px solid white;
   padding: 0 1rem;

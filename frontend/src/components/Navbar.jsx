@@ -53,6 +53,8 @@ const Center = styled.div`
 `;
 
 const Logo = styled.h2`
+  color: #476085;
+  
   font-weight: bold;
   letter-spacing: 1px;
   padding: 0 1rem;
@@ -70,7 +72,8 @@ const MenuItem = styled.div`
   font-size: 1.2rem;
   cursor: pointer;
   margin-left: 25px;
-  color: purple;
+  color: #476085;
+  font-weight: 500;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 

@@ -1,153 +1,156 @@
 import {
   Facebook,
-  Instagram,
   MailOutline,
   Phone,
-  Pinterest,
-  Room,
   Twitter,
+  Copyright,
+  LocationOn,
 } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 import React  from 'react';
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
 
-const Container = styled.div`
-  display: flex;
-  ${mobile({ flexDirection: "column" })}
-`;
 
+
+//styling
+
+const UpperContainer = styled.div`
+  padding: 0 1rem;
+  display:grid;
+  margin:0.5rem;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  ${mobile({ padding: "0" ,
+             margin:"0 1.3rem 0 0" ,           
+             gridTemplateColumns: "1fr 1fr  2fr" ,
+   
+          
+          })}
+
+
+
+
+`;
+const LowerContainer = styled.div`
+   display: flex;
+   color: #535353;
+
+`;
 const Left = styled.div`
-  flex: 1;
-  display: flex;
- text-align: center;
-  flex-direction: column;
-  padding: 20px;
+justify-self:left;
 `;
-
-const Logo = styled.h1``;
-
-const Desc = styled.p`
-  margin: 20px 0px;
-`;
-
-const SocialContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const SocialIcon = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: white;
-  background-color: #${(props) => props.color};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-`;
-
 const Center = styled.div`
-  text-align: center;
-  flex: 2;
-  padding: 20px;
-  ${mobile({ display: "none" })}
-`;
+  justify-self: center;
 
-const Title = styled.h3`
- text-transform: uppercase;
- margin-bottom: 30px;
 `;
-
-const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const ListItem = styled.li`
-  width: 50%;
-  margin-bottom: 10px;
-`;
-
 const Right = styled.div`
-  flex: 1;
-  text-align: center;
-  padding: 20px;
-  ${mobile({ backgroundColor: "#fff8f8" })}
+justify-self: end;
+font-size: 1rem;
 
 `;
+const ListTitle = styled.h3`
+  text-transform: uppercase;
+  
+`;
+const List = styled.ul`
+justify-content: center;
 
-const ContactItem = styled.div`
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  
  
+ 
+ `;
+const ListItem = styled.li`
+      list-style: none;
+      cursor: pointer;
+
 `;
 
-const Payment = styled.img`
-    width: 50%;
+const AboutSite = styled.div`
+  ${mobile({ display: "none" })}
+
+
+`;
+const SiteName = styled.h3`
+color: purple;
+${mobile({ fontSize: "0.9rem" })}
+
+
+
+`;
+const SiteDescription = styled.p`
+
+
+
+`;
+const Span = styled.span`
+margin: 0 2px;
+  
+
 `;
 
-const Footer = () => {
-  return (
-    <Container>
-      <Left>
-        <Title>Useful Links</Title>
+
+
+
+const Footer=()=>{
+return(
+  <div>
+    <UpperContainer>
+     <AboutSite>
+        <SiteName>M-Vendor.</SiteName>
+        <SiteDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, quod quos. A perferendis sunt quis, atque debitis omnis deleniti quas ex. Quaerat ab similique ullam adipisci temporibus blanditiis nisi a.</SiteDescription>
+      </AboutSite>
+    <Left>
         <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Kitchen</ListItem>
-          <ListItem>Living Room</ListItem>
-          <ListItem>Accessories</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Order Tracking</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Terms</ListItem>
+          <ListTitle>Buy</ListTitle>
+          <ListItem>Link113</ListItem>
+          <ListItem>Link</ListItem>
+          <ListItem>Link</ListItem>
         </List>
       </Left>
       <Center>
-        <Logo>Delsur Furniture.</Logo>
-        <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.
-        </Desc>
-        <SocialContainer>
-          <SocialIcon color="3B5999">
-            <Facebook />
-          </SocialIcon>
-          <SocialIcon color="E4405F">
-            <Instagram />
-          </SocialIcon>
-          <SocialIcon color="55ACEE">
-            <Twitter />
-          </SocialIcon>
-          <SocialIcon color="E60023">
-            <Pinterest />
-          </SocialIcon>
-        </SocialContainer>
+        <List>
+        <ListTitle>sell</ListTitle>
+
+          <ListItem>Link</ListItem>
+          <ListItem>Link234</ListItem>
+          <ListItem>Link</ListItem>
+        </List>
       </Center>
       <Right>
-        <Title>Contact</Title>
-        <ContactItem>
-          <Room style={{marginRight:"10px"}}/> 123 Random st, NSW
-        </ContactItem>
-        <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> +1 234 56 78
-        </ContactItem>
-        <ContactItem>
-          <MailOutline style={{marginRight:"10px"}} /> contact@sjkrta.dev
-        </ContactItem>
-        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
+        <List>
+        <ListTitle>contact Us</ListTitle>
+
+          <ListItem><Phone fontSize='small'/>1234567890</ListItem>
+         
+          <ListItem><LocationOn fontSize='small'/>Address,street</ListItem>  
+          <Span><Link to='/'><MailOutline fontSize="large"/></Link> <Link to='/'><Twitter fontSize='large'/></Link> <Link to='/'><Facebook fontSize='large'/></Link> 
+         
+          </Span>
+        </List>
+       
       </Right>
-    </Container>
-  );
-};
+
+    
+    </UpperContainer>
+    <LowerContainer>
+      <Span><SiteName>M-Vendor</SiteName></Span>
+      <Span>|</Span>
+      <Span><Copyright fontSize='small'/>2022@prop07</Span>
+    
+    
+    </LowerContainer>
+  </div>
+)
+
+
+}
 
 export default Footer;
+
+
+
+
+
+
+

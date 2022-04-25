@@ -73,7 +73,7 @@ const MenuItem = styled.div`
   cursor: pointer;
   margin-left: 25px;
   color: #476085;
-  font-weight: 500;
+  font-weight: 510;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 

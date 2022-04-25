@@ -104,14 +104,11 @@ const Icon = styled.div`
   place-items: center;
   border-radius: 50%;
 `;
-const Mail = styled.p`
-text-decoration: underline;
-color: blue;
-`;
+
 const Footer = () => {
   return (
     <div>
-      <UpperContainer>
+      <classUpperContainer>
         <AboutSite>
           <SiteName>M-Vendor.</SiteName>
           <SiteDescription>
@@ -148,8 +145,7 @@ const Footer = () => {
             </ListItem>
             <ListItem>
               <MailOutline />
-              <Mail> prop07@gmail.com</Mail>
-             
+              prop07@gmail.com
             </ListItem>
           </List>
           <IconContainer>
@@ -164,7 +160,7 @@ const Footer = () => {
             </Icon>
           </IconContainer>
         </Right>
-      </UpperContainer>
+      </classUpperContainer>
       <LowerContainer>
         <Span>
           <SiteName>M-Vendor</SiteName>

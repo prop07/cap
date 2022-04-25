@@ -16,6 +16,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
+color: #252525;
   font-size: 2.5rem;
   letter-spacing: 0.2rem;
   margin: 1rem;

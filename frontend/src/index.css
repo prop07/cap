@@ -1,3 +1,7 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
 a{
     text-decoration: none;
     
@@ -5,4 +9,15 @@ a{
 a:hover {
      color: #00F
   }
+/* ===== Scrollbar CSS ===== */
 
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: #727070;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }

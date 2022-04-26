@@ -10,17 +10,19 @@ import Newsletter from "../components/Newsletter";
 import Shopbycategory from "../components/Shopbycategory";
 import Mostsellproduct from "../components/Popularproduct";
 import Slider from "../components/Slider";
+import styled from "styled-components";
 
+//styling
 
 const Home = () => {
   return (
     <div>
       <Navbar />
-      <Slider/>
+     <Slider/>
       <Shopbycategory/>
-      <Shopbycategory/>
-      <Mostsellproduct/>
-      <Newsletter/>
+      <Mostsellproduct />
+   
+       <Newsletter/>
       <Footer/> 
     </div>
   );

@@ -1,11 +1,14 @@
 import { ArrowLeft, ArrowRight } from "@material-ui/icons";
 import React, { useState } from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
+
 
 const Main = styled.div`
   display: flex;
-  /* overflow: hidden; */
+  overflow: hidden;
   position: relative;
+ 
 `;
 
 const Container = styled.div`
@@ -13,23 +16,32 @@ const Container = styled.div`
 `;
 
 const ItemWrapper = styled.div`
+ 
+
+  mask: linear-gradient(to left, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
+
+  transition: all 0.3s ease;
+
   width: 100vw;
   transform: translateX(${(props) => -props.index * 100 + "vw"});
 `;
 
-const Item = styled.div`
-max-width:1200px;
-margin: auto;
-  background-color: ${(props) => props.bg};
-  height: 500px;
+const Image = styled.img`
+  mask: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+  width: 100vw;
+  margin: auto;
+  /* background-color: ${(props) => props.bg}; */
+  height: 700px;
+  ${mobile({ height: "auto" })};
+
 `;
 
 const Button = styled.button`
   position: absolute;
-  background-color: #8000807e;
+  background-color: #92acd4;
   top: 0;
   bottom: 0;
-  margin: auto;
+  margin-top: 10%;
   height: 50px;
   border-radius: 50%;
   border: none;
@@ -38,31 +50,59 @@ const Button = styled.button`
   right: ${(props) => props.direction === "right" && "10px"};
   z-index: 2;
   :hover {
-    background-color: purple;
+    background-color: #99ddc3;
     cursor: pointer;
   }
+  ${mobile({ height: "40px",
+            width:"40px",
+
+ 
+            
+})};
+
+`;
+const ImageWrapper = styled.div`
+  mask: linear-gradient(to right, rgba(0, 0, 0, 1) 90%, transparent 100%);
 `;
 
-const  Slider=()=> {
+const Slider = () => {
   const data = [
+
     {
       id: 1,
-      bg: "red",
+      bg: "green",
+      link: "https://m.media-amazon.com/images/I/71qid7QFWJL._SX3000_.jpg",
     },
-    
-    { id: 2, bg: "green" },
-    
-    { id: 3, bg: "yellow" },
+    {
+      id: 2,
+      bg: "red",
+      link: "https://m.media-amazon.com/images/I/61N83xtyr6L._SX3000_.jpg",
+    },
+
+   
+
+    {
+      id: 3,
+      bg: "yellow",
+      link: "https://m.media-amazon.com/images/I/61jovjd+f9L._SX3000_.jpg",
+    },
+
+    {
+      id: 4,
+      bg: "yellow",
+      link: "https://m.media-amazon.com/images/I/711Y9Al9RNL._SX3000_.jpg",
+    },
+  
   ];
   const [index, setIndex] = useState(0);
   const handleCarousel = (direction) => {
     if (direction === "left") {
-      index === 0 ? setIndex(data.length-1) : setIndex(index - 1);
+      index === 0 ? setIndex(data.length - 1) : setIndex(index - 1);
     } else {
-      index === data.length-1 ? setIndex(0) : setIndex(index + 1);
+      index === data.length - 1 ? setIndex(0) : setIndex(index + 1);
     }
-    console.log(index);
-    console.log(data)
+    // console.log(index);
+    // console.log(data)
   };
   return (
     <Main>
@@ -72,7 +112,9 @@ const  Slider=()=> {
       <Container>
         {data.map((item) => (
           <ItemWrapper index={index}>
-            <Item bg={item.bg}></Item>
+            <ImageWrapper>
+              <Image src={item.link} alt={item.link} />
+            </ImageWrapper>
           </ItemWrapper>
         ))}
       </Container>
@@ -81,7 +123,6 @@ const  Slider=()=> {
       </Button>
     </Main>
   );
-}
-
+};
 
 export default Slider;

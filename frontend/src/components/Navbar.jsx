@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { useState } from "react";
 
 //icons
+import logo from "../image/m.png";
 import { Badge } from "@material-ui/core";
-import { ShoppingCartOutlined , AccountCircle ,Help,Search} from "@material-ui/icons";
+import { ShoppingCartOutlined , AccountCircle ,Help,Search, Close} from "@material-ui/icons";
 
 const Container = styled.div`
 `;
@@ -49,7 +51,8 @@ font-size: 1rem;
 `;
 
 const Center = styled.div`
-  flex: 2;
+gap:1rem;
+  display: flex;
   text-align: center;
 `;
 
@@ -86,23 +89,54 @@ const Button = styled.button`
   }
 `;
 
+const Links = styled.div`
+padding: 2px;
+align-self: center;
+text-transform: capitalize;
+color:#353535;
+line-height: 20px;
+font-size: 15px;
+  cursor: pointer;
+  &:hover{
+    color:blue;
+  }
+
+`;
+
 const Navbar = () => {
+  // const [show,setShow]=useState(false)
+
+
   return (
     <Container>
       <Wrapper>
         <Left>
           <Link to="/">
-            <Logo src="https://raw.githubusercontent.com/prop07/cap/main/image/m.png?token=GHSAT0AAAAAABTHYMZX4HRG7E64MP5QIANAYTHV4SA" alt="site logo"/>
+            <Logo src={logo} alt="site logo"/>
           </Link>
         </Left>
-        <Center>
-          <SearchContainer>
-            <Input placeholder="Search for anything..." />
+        <Center> <Links>phone</Links>
+            <Links>watch</Links>
+            <Links>laptops</Links>
+            <Links>gaming</Links>
+            <Links>offers</Links>
 
-            <Button type="submit">
+
+          <SearchContainer>
+           
+          <Input placeholder="Search for anything..." />
+
+<Button type="submit">
+  <Close/>
+</Button>
+
+            {/* <Button onClick={()=>setShow(true)}>
               <Search />
-            </Button>
+            </Button> 
+           {show? <Input placeholder="Search for anything..." ><Button onClick={()=>setShow(false)}><Close/></Button></Input>:null} */}
+           
           </SearchContainer>
+          {/* <Search/> */}
         </Center>
         <Right>
           <Link to="/help/">

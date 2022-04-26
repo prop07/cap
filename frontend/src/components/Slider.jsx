@@ -33,7 +33,7 @@ const Image = styled.img`
 
 const Button = styled.button`
   position: absolute;
-  background-color: #92acd4;
+  background-color: #b3c2da;
   top: 0;
   bottom: 0;
   margin-top: 10%;

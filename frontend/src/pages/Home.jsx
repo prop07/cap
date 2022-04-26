@@ -10,12 +10,14 @@ import Newsletter from "../components/Newsletter";
 import Shopbycategory from "../components/Shopbycategory";
 import Mostsellproduct from "../components/Popularproduct";
 import Slider from "../components/Slider";
+import Product from "./Product";
 
 //styling
 
 const Home = () => {
   return (
     <div>
+    <Product/>
       <Navbar />
      <Slider/>
       <Shopbycategory/>

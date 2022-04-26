@@ -40,10 +40,9 @@ const List = styled.div`
 `;
 const ListItem = styled.div`
 color:#353535;
-padding:1rem 0rem 1rem 0rem;
-text-transform: capitalize;
+margin:1.5rem 0rem 1.5rem 0rem;
 line-height: 20px;
-font-size: 14px;
+font-size: 13px;
 font-weight: 400;
   list-style: none;
   cursor: pointer;
@@ -98,26 +97,26 @@ const Footer = () => {
         </AboutSite>
          <SiteLinks>
           <List>
-            <ListItem>placing an order</ListItem>
-            <ListItem>shipping options</ListItem>
-            <ListItem>tracking a package</ListItem>
-            <ListItem>country availability</ListItem>
-            <ListItem>repairs</ListItem>
-            <ListItem>installation</ListItem>
+            <ListItem>Placing an order</ListItem>
+            <ListItem>Shipping options</ListItem>
+            <ListItem>Tracking a package</ListItem>
+            <ListItem>Country availability</ListItem>
+            <ListItem>Repairs</ListItem>
+            <ListItem>Installation</ListItem>
             
 
           </List>
       
        
           <List>
-            <ListItem>help center</ListItem>
-            <ListItem>contact us</ListItem>
-            <ListItem>financing</ListItem>
-            <ListItem>device recycling</ListItem>
-            <ListItem>plcing an order</ListItem>
-            <ListItem>shipping options</ListItem>
-            <ListItem>tracking a package</ListItem>
-            <ListItem>country availability</ListItem>
+            <ListItem>Help center</ListItem>
+            <ListItem>Contact us</ListItem>
+            <ListItem>Financing</ListItem>
+            <ListItem>Device recycling</ListItem>
+            <ListItem>Placing an order</ListItem>
+            <ListItem>Shipping options</ListItem>
+            <ListItem>Tracking a package</ListItem>
+            <ListItem>Country availability</ListItem>
            
           </List>
          </SiteLinks>

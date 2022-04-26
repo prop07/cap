@@ -1,6 +1,7 @@
 import { Send } from "@material-ui/icons";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import logo from "../image/m.png";
 
 const Container = styled.div`
    mask: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, transparent 100%);
@@ -68,7 +69,7 @@ const Newsletter = () => {
   return (
     <Container>
       <Wrapper>
-        <Logo src="https://raw.githubusercontent.com/prop07/cap/main/image/m.png?token=GHSAT0AAAAAABTHYMZX4HRG7E64MP5QIANAYTHV4SA" alt="site logo"/>
+        <Logo src={logo} alt="site logo"/>
         <Description>Keep me updated about devices, news, tips, and offers from the Store.</Description>
         <InputContainer>
           <Input placeholder="Your email" />

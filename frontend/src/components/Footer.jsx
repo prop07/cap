@@ -1,11 +1,9 @@
 import {
   Facebook,
-  Phone,
   Twitter,
   Copyright,
-  LocationOn,
   Instagram,
-  MailOutline,
+  YouTube,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import React from "react";
@@ -15,71 +13,57 @@ import { mobile } from "../responsive";
 //styling
 
 const UpperContainer = styled.div`
-  background-color: #F5F4F4;
   padding: 1rem;
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr 1fr;
   ${mobile({
     padding: "0.2rem",
-    gridTemplateColumns: "1fr 1fr  2fr",
   })}
 `;
 const LowerContainer = styled.div`
+padding: 0.5rem 0rem;
+  display:flex;
   background-color: #F5F4F4;
-
-
-  height: 2rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  color: #535353;
+  color: #5e5e5e;
 `;
-const Left = styled.div`
-  justify-self: left;
-  ${mobile({ marginLeft: "1rem" })}
-`;
-const Center = styled.div`
-  justify-self: center;
-`;
-const Right = styled.div`
-  display: grid;
-  justify-self: end;
-  font-size: 1rem;
-  justify-items: center;
-`;
-const ListTitle = styled.h3`
-  text-transform: uppercase;
-  text-align: center;
-  color: #476085;
 
-  ${mobile({ fontSize: "0.9rem" })}
-`;
+
+
 const List = styled.div`
+  padding: 2rem 0rem 2rem 4rem;
   justify-content: center;
-  margin: 0.7rem 0;
   ${mobile({ margin: "0.5rem 0",
             fontSize: "0.8rem"     })}
 `;
 const ListItem = styled.div`
+color:#353535;
+padding:1rem 0rem 1rem 0rem;
+text-transform: capitalize;
+line-height: 20px;
+font-size: 14px;
+font-weight: 400;
   list-style: none;
   cursor: pointer;
   display: grid;
-  align-content: center;
   grid-auto-flow: column;
-  place-items: center;
-  justify-content: center;
+  &:hover{
+    color:blue;
+  }
 `;
 
 const AboutSite = styled.div`
-  margin-right: 0.5rem;
+  margin-right: auto;
   ${mobile({ display: "none" })}
 `;
-const SiteName = styled.h3`
-  color: #476085;
-  ${mobile({ fontSize: "1rem" })}
+
+const SiteDescription = styled.p`
+color:#353535;
+font-size: 12px;
+line-height: 20px;
 `;
-const SiteDescription = styled.p``;
 
 const Span = styled.span`
   display: flex;
@@ -87,93 +71,77 @@ const Span = styled.span`
   margin: 0 2px;
   gap: 0.2rem;
 `;
-const IconContainer = styled.div`
+const SocialIcon = styled.div`
+  cursor: pointer;
   display: flex;
   gap: 1rem;
   justify-content: center;
 `;
-const Icon = styled.div`
-  background-color: ${(props) =>
-    (props.bg === "#4267B2" && "#4267B2") ||
-    (props.bg === "#1DA1F2" && "#1DA1F2") ||
-    (props.bg === "#F56040" && "#F56040")};
-  color: #ffffff;
-  height: 30px;
-  width: 30px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
+const SiteLinks = styled.div`
+padding: 1rem 3rem 0.5rem 3rem;
+display: flex;
+justify-content: end;
 `;
-const Mail = styled.p`
-text-decoration: underline;
-color: blue;
+
+const CopyrightReserve = styled.div`
+
+
 `;
 const Footer = () => {
   return (
     <div>
       <UpperContainer>
         <AboutSite>
-          <SiteName>M-Vendor.</SiteName>
           <SiteDescription>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nam illo corrupti, eos suscipit aliquam earum eum alias dignissimos, commodi voluptate fuga provident deleniti? Eius eaque, sapiente quod vero ipsam praesentium repudiandae dolorem hic, ut commodi sequi laboriosam unde adipisci quidem asperiores pariatur dolore, perspiciatis dolores doloribus ad obcaecati cum enim. Maiores sapiente praesentium non totam eum! Numquam, repudiandae mollitia.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nam illo corrupti, eos suscipit aliquam earum eum alias dignissimos, commodi voluptate fuga provident deleniti? Eius eaque, sapiente quod vero ipsam praesentium repudiandae dolorem hic, ut commodi sequi laboriosam unde adipisci quidem asperiores pariatur dolore, perspiciatis dolores doloribus ad obcaecati cum enim. Maiores sapiente praesentium non totam eum! Numquam, repudiandae mollitia. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt totam sequi quasi ex laborum, numquam amet mollitia, rerum impedit dolores ipsa adipisci, molestiae odio assumenda blanditiis eveniet atque quam dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo voluptas tempora inventore, sapiente a nobis libero ipsa reiciendis? Laborum, cum?
           </SiteDescription>
         </AboutSite>
-        <Left>
-          <ListTitle>Dummy Link</ListTitle>
+         <SiteLinks>
           <List>
-            <ListItem>Link</ListItem>
-            <ListItem>Link234</ListItem>
-            <ListItem>Link</ListItem>
-          </List>
-        </Left>
-        <Center>
-          <ListTitle>Buy & sell</ListTitle>
-          <List>
-            <ListItem>Link</ListItem>
-            <ListItem>Link234</ListItem>
-            <ListItem>Link</ListItem>
-          </List>
-        </Center>
-        <Right>
-          <ListTitle>contact Us</ListTitle>
-          <List>
-            <ListItem>
-              <Phone fontSize="small" />
-              1234567890
-            </ListItem>
+            <ListItem>placing an order</ListItem>
+            <ListItem>shipping options</ListItem>
+            <ListItem>tracking a package</ListItem>
+            <ListItem>country availability</ListItem>
+            <ListItem>repairs</ListItem>
+            <ListItem>installation</ListItem>
+            
 
-            <ListItem>
-              <LocationOn fontSize="small" />
-              Address,street
-            </ListItem>
-            <ListItem>
-              <MailOutline />
-              <Mail> prop07@gmail.com</Mail>
-             
-            </ListItem>
           </List>
-          <IconContainer>
-            <Icon bg="#4267B2">
-              <Facebook />
-            </Icon>
-            <Icon bg="#1DA1F2">
-              <Twitter />
-            </Icon>
-            <Icon bg="#F56040">
-              <Instagram />
-            </Icon>
-          </IconContainer>
-        </Right>
+      
+       
+          <List>
+            <ListItem>help center</ListItem>
+            <ListItem>contact us</ListItem>
+            <ListItem>financing</ListItem>
+            <ListItem>device recycling</ListItem>
+            <ListItem>plcing an order</ListItem>
+            <ListItem>shipping options</ListItem>
+            <ListItem>tracking a package</ListItem>
+            <ListItem>country availability</ListItem>
+           
+          </List>
+         </SiteLinks>
+         
+
+      
+      
       </UpperContainer>
       <LowerContainer>
-        <Span>
-          <SiteName>M-Vendor</SiteName>
-        </Span>
-        |
-        <Span>
+     <SocialIcon>
+       <Twitter/>
+       <Instagram/>
+       <Facebook/>
+       <YouTube/>
+     </SocialIcon>
+       <CopyrightReserve>
+        
+       <Span>
+         |
           <Copyright fontSize="small" />
           2022@prop07
         </Span>
+         
+       </CopyrightReserve>
       </LowerContainer>
     </div>
   );

@@ -1,4 +1,3 @@
-import { ArrowForward } from "@material-ui/icons";
 import styled from "styled-components";
 
 //style
@@ -13,11 +12,14 @@ const Container = styled.div`
     overflow-x: scroll;
   }
 `;
-const Title = styled.div`
-  font-size: 1rem;
+const Title = styled.h2`
+  color: #252525;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  
   margin: 0.5rem;
-  display: flex;
-  align-content: center;
+  
 `;
 const CategoryList = styled.div`
   &:hover {
@@ -38,7 +40,9 @@ const CategoryImage = styled.img`
   }
 `;
 
-const CategoryName = styled.p`
+const CategoryName = styled.h4`
+color:#252525;
+  
   text-transform: capitalize;
   text-align: center;
 `;
@@ -69,8 +73,8 @@ const Shopbycategory = () => {
     <div>
       <Wrapper>
          <Title>
-        Explore By Popular Category
-        <ArrowForward fontSize="small" />
+        Popular Category
+       
       </Title>
       <Container>{PopularCategory}</Container>
       </Wrapper>

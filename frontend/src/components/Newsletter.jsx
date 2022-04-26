@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-  background-color: #BADED0;
+   mask: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, transparent 100%);
+  background-color: #f5f5f5;
   padding: 1rem;
   margin: auto;
 `;
@@ -15,16 +16,18 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const Title = styled.h1`
-color: #252525;
-  font-size: 2.5rem;
-  letter-spacing: 0.2rem;
-  margin: 1rem;
+const Logo = styled.img`
+padding: 1rem;
+object-fit: contain;
+  height: 3rem;
+  width: 4em;
 `;
 
-const Desc = styled.div`
-  font-size: 1.1rem;
-  font-weight: 400;
+const Description = styled.h2`
+  color: #252525;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
   ${mobile({ textAlign: "center" })}
 `;
 
@@ -65,8 +68,8 @@ const Newsletter = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>Newsletter</Title>
-        <Desc>Get timely updates from your favorite products.</Desc>
+        <Logo src="https://raw.githubusercontent.com/prop07/cap/main/image/m.png?token=GHSAT0AAAAAABTHYMZX4HRG7E64MP5QIANAYTHV4SA" alt="site logo"/>
+        <Description>Keep me updated about devices, news, tips, and offers from the Store.</Description>
         <InputContainer>
           <Input placeholder="Your email" />
           <Button>

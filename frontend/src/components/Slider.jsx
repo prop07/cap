@@ -3,12 +3,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
-
 const Main = styled.div`
   display: flex;
   overflow: hidden;
   position: relative;
- 
 `;
 
 const Container = styled.div`
@@ -16,9 +14,7 @@ const Container = styled.div`
 `;
 
 const ItemWrapper = styled.div`
- 
-
-  mask: linear-gradient(to left, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
+  mask: linear-gradient(to left, rgba(0, 0, 0, 1) 90%, transparent 100%);
 
   transition: all 0.3s ease;
 
@@ -27,13 +23,12 @@ const ItemWrapper = styled.div`
 `;
 
 const Image = styled.img`
-  mask: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+  mask: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, transparent 100%);
   width: 100vw;
   margin: auto;
   /* background-color: ${(props) => props.bg}; */
   height: 700px;
   ${mobile({ height: "auto" })};
-
 `;
 
 const Button = styled.button`
@@ -53,13 +48,7 @@ const Button = styled.button`
     background-color: #99ddc3;
     cursor: pointer;
   }
-  ${mobile({ height: "40px",
-            width:"40px",
-
- 
-            
-})};
-
+  ${mobile({ height: "40px", width: "40px" })};
 `;
 const ImageWrapper = styled.div`
   mask: linear-gradient(to right, rgba(0, 0, 0, 1) 90%, transparent 100%);
@@ -67,7 +56,6 @@ const ImageWrapper = styled.div`
 
 const Slider = () => {
   const data = [
-
     {
       id: 1,
       bg: "green",
@@ -78,8 +66,6 @@ const Slider = () => {
       bg: "red",
       link: "https://m.media-amazon.com/images/I/61N83xtyr6L._SX3000_.jpg",
     },
-
-   
 
     {
       id: 3,
@@ -92,7 +78,6 @@ const Slider = () => {
       bg: "yellow",
       link: "https://m.media-amazon.com/images/I/711Y9Al9RNL._SX3000_.jpg",
     },
-  
   ];
   const [index, setIndex] = useState(0);
   const handleCarousel = (direction) => {

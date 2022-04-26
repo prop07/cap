@@ -5,14 +5,15 @@ import { mobile } from "../responsive";
 
 //icons
 import { Badge } from "@material-ui/core";
-import { ShoppingCartOutlined } from "@material-ui/icons";
-import { Search } from "@material-ui/icons";
+import { ShoppingCartOutlined , AccountCircle ,Help,Search} from "@material-ui/icons";
 
-const Container = styled.div``;
+const Container = styled.div`
+`;
 
 const Wrapper = styled.div`
   padding: 10px 20px;
   display: grid;
+  gap: 1rem;
   grid-template-columns: max-content auto max-content;
   align-items: center;
   ${mobile({ padding: "10px 0px" })}
@@ -33,12 +34,12 @@ const SearchContainer = styled.div`
 `;
 
 const Input = styled.input`
+font-size: 1rem;
   margin: 0 auto;
   width: 100%;
   height: 40px;
   padding: 0 20px;
   color: #464646;
-  font-size: 1.2rem;
   border: none;
   background-color: #f3f3f3;
   border-radius: 1rem;
@@ -52,13 +53,10 @@ const Center = styled.div`
   text-align: center;
 `;
 
-const Logo = styled.h2`
-  color: #476085;
-  
-  font-weight: bold;
-  letter-spacing: 1px;
-  padding: 0 1rem;
-  ${mobile({ fontSize: "18px" })}
+const Logo = styled.img`
+  object-fit: contain;
+  height: 3rem;
+  width: 4em;
 `;
 const Right = styled.div`
   flex: 1;
@@ -72,8 +70,11 @@ const MenuItem = styled.div`
   font-size: 1.2rem;
   cursor: pointer;
   margin-left: 25px;
-  color: #476085;
+  color: #6d6d6d;
   font-weight: 510;
+  &:hover{
+    color:blue;
+  }
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
@@ -84,13 +85,14 @@ const Button = styled.button`
     cursor: pointer;
   }
 `;
+
 const Navbar = () => {
   return (
     <Container>
       <Wrapper>
         <Left>
           <Link to="/">
-            <Logo>M-Vendor.</Logo>
+            <Logo src="https://raw.githubusercontent.com/prop07/cap/main/image/m.png?token=GHSAT0AAAAAABTHYMZX4HRG7E64MP5QIANAYTHV4SA" alt="site logo"/>
           </Link>
         </Left>
         <Center>
@@ -103,15 +105,13 @@ const Navbar = () => {
           </SearchContainer>
         </Center>
         <Right>
-          <Link to="/register/">
-            <MenuItem>REGISTER</MenuItem>
+          <Link to="/help/">
+            <MenuItem><Help/></MenuItem>
           </Link>
-          <Link to="/login/">
-            <MenuItem>SIGN IN</MenuItem>
+          <Link to="/account/">
+            <MenuItem><AccountCircle/></MenuItem>
           </Link>
-          <Link to="/vendor/">
-            <MenuItem>BE VENDOR</MenuItem>
-          </Link>
+         
           <Link to="/cart/">
             <MenuItem>
               <Badge badgeContent={1} color="primary">

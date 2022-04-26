@@ -1,4 +1,4 @@
-import { ArrowForward, Star, StarHalf, StarOutline } from "@material-ui/icons";
+import { Star, StarHalf, StarOutline } from "@material-ui/icons";
 import styled from "styled-components";
 
 //style
@@ -8,25 +8,29 @@ const Container = styled.div`
   gap: 2rem;
   overflow-x: hidden;
   overflow-y: hidden;
-  height: 22.5rem;
+  height: 23rem;
   &:hover {
     overflow-x: scroll;
   }
 `;
-const Title = styled.div`
-  font-size: 1rem;
+const Title = styled.h2`
+color: #303030;
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  
   margin: 0.5rem;
-  display: flex;
-  align-content: center;
 `;
 const ProductList = styled.div`
+color:#353535;
+
   &:hover {
     color: #476085;
-    text-decoration: underline;
   }
 `;
 const ProductImage = styled.img`
-filter: drop-shadow(0px 2px 3px black);
+/* filter: drop-shadow(1px 1px 2px black); */
+
   margin: 5px;
   object-fit: contain;
   cursor: pointer;
@@ -42,7 +46,7 @@ filter: drop-shadow(0px 2px 3px black);
   }
 `;
 
-const ProductName = styled.p`
+const ProductName = styled.h4`
   text-transform: capitalize;
 `;
 
@@ -96,7 +100,7 @@ const Popularproduct = () => {
     <div>
       <Title>
         Popular Product
-        <ArrowForward fontSize="small" />
+       
       </Title>
       <Container>{PopularProduct}</Container>
     </div>

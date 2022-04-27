@@ -14,8 +14,8 @@ const Container = styled.div`
 
 const ProductImage = styled.img`
   object-fit: contain;
-  height: 40rem;
-  width: 40rem;
+  height: 30rem;
+  width: 30rem;
 `;
 
 const ProductInfo = styled.div`
@@ -33,7 +33,7 @@ const ProductName = styled.h4`
   line-height: 35px;
 `;
 const ProductPrice = styled.div`
-   font-size: 25px;
+  font-size: 25px;
   line-height: 25px;
   color: #383838;
 `;
@@ -52,16 +52,16 @@ const Filter = styled.div`
 `;
 
 const FilterTitle = styled.h4`
-    color: #494949;
+  color: #494949;
   letter-spacing: 2px;
   padding: 5px 0;
 `;
 
 const FilterSelect = styled.select`
   color: #383838;
-  
+
   height: 4rem;
-  width: 20rem;
+  width: 25rem;
   font-size: 20px;
   line-height: 20px;
   padding: 0.5rem;
@@ -76,7 +76,7 @@ const FilterOption = styled.option`
 `;
 const Button = styled.button`
   transition: 0.3s ease;
-  width: 20rem;
+  width: 25rem;
 
   padding: 1rem;
   background-color: transparent;
@@ -99,17 +99,62 @@ const Button = styled.button`
   }
 `;
 
-const ProductPriceAndRating= styled.div``
+const ProductPriceAndRating = styled.div``;
+const ProductImageContainer = styled.div`
+gap: 1rem;
+display: flex;
+flex-direction: column;
+`;
+const ProductImageList = styled.div`
+display: flex;
+flex-direction: row;
+gap: 1rem;
 
-;
+
+`;
+const ProductSubImage = styled.img`
+  cursor: pointer;
+
+  border: 2px ridge #f1f1f1;
+border-radius: 10px;
+object-fit: contain;
+height: 10rem;
+width: 10rem;
+
+&:hover {
+  box-shadow: 1px 1px 1px black;
+  }
+
+`;
+
+
+
+
 const Product = () => {
   return (
     <div>
       <Container>
-        <ProductImage
-          src="https://cdn.shopify.com/s/files/1/0225/6679/products/quicksquarenew_202087225936568_1024x1024.jpg?v=1596805381"
+          <ProductImageContainer> <ProductImage
+          src="https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg"
           alt="jordan"
         />
+        <ProductImageList>
+      
+        
+        <ProductSubImage
+          src="  https://m.media-amazon.com/images/I/61t0DD0FrSL._AC_SY575._SX._UX._SY._UY_.jpg"
+          alt="jordan"
+        />
+        <ProductSubImage
+          src="https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg"
+          alt="jordan"
+        />
+            <ProductSubImage src="https://m.media-amazon.com/images/I/611lAiLMLWL._AC_UX575_.jpg"
+          alt="jordan"/>
+        </ProductImageList>
+        
+        </ProductImageContainer>
+       
 
         <ProductInfo>
           <ProductName>nike1234</ProductName>

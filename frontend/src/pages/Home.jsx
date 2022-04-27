@@ -17,7 +17,7 @@ import Product from "./Product";
 const Home = () => {
   return (
     <div>
-    <Product/>
+    
       <Navbar />
      <Slider/>
       <Shopbycategory/>
@@ -25,6 +25,7 @@ const Home = () => {
    
        <Newsletter/>
       <Footer/> 
+      <Product/>
     </div>
   );
 };

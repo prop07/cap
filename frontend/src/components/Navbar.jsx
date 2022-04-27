@@ -104,7 +104,7 @@ font-size: 15px;
 `;
 
 const Navbar = () => {
-  // const [show,setShow]=useState(false)
+
 
 
   return (
@@ -115,7 +115,7 @@ const Navbar = () => {
             <Logo src={logo} alt="site logo"/>
           </Link>
         </Left>
-        <Center> <Links>phone</Links>
+        <Center > <Links>phone</Links>
             <Links>watch</Links>
             <Links>laptops</Links>
             <Links>gaming</Links>
@@ -138,7 +138,11 @@ const Navbar = () => {
           </SearchContainer>
           {/* <Search/> */}
         </Center>
-        <Right>
+       
+
+        <Right> <Button type="submit">
+  <Search/>
+</Button>
           <Link to="/help/">
             <MenuItem><Help/></MenuItem>
           </Link>

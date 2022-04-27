@@ -7,7 +7,7 @@ const Container = styled.div`
   gap: 0.5rem;
   overflow-x: hidden;
   overflow-y: hidden;
-  height: 10.5rem;
+  height: 12rem;
   &:hover {
     overflow-x: scroll;
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 
 
@@ -14,16 +15,21 @@ import Product from "./Product";
 
 //styling
 
+
+
+
+
 const Home = () => {
   return (
     <div>
     
       <Navbar />
-     <Slider/>
+      <Slider/>
       <Shopbycategory/>
       <Mostsellproduct />
    
-       <Newsletter/>
+      
+      <Newsletter/>
       <Footer/> 
       <Product/>
     </div>

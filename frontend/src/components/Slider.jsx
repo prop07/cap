@@ -58,26 +58,27 @@ const Slider = () => {
   const data = [
     {
       id: 1,
-      bg: "green",
       link: "https://m.media-amazon.com/images/I/71qid7QFWJL._SX3000_.jpg",
     },
     {
       id: 2,
-      bg: "red",
       link: "https://m.media-amazon.com/images/I/61N83xtyr6L._SX3000_.jpg",
     },
 
     {
       id: 3,
-      bg: "yellow",
       link: "https://m.media-amazon.com/images/I/61jovjd+f9L._SX3000_.jpg",
     },
 
     {
       id: 4,
-      bg: "yellow",
       link: "https://m.media-amazon.com/images/I/711Y9Al9RNL._SX3000_.jpg",
     },
+
+    {
+      id:5,
+      link:"https://m.media-amazon.com/images/I/61TD5JLGhIL._SX3000_.jpg",
+    }
   ];
   const [index, setIndex] = useState(0);
   const handleCarousel = (direction) => {

@@ -70,7 +70,7 @@ const ProductStar = styled.span`
 
 const Popularproduct = () => {
   const PopularProduct = [];
-  for (let i = 0; i <= 20; i++) {
+  for (let i = 0; i <= 10; i++) {
     PopularProduct.push(
       <ProductList>
         <Product>

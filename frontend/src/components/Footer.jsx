@@ -1,9 +1,9 @@
 import {
   Facebook,
+  GitHub,
   Twitter,
   Copyright,
-  Instagram,
-  YouTube,
+  LinkedIn,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import React from "react";
@@ -128,9 +128,9 @@ const Footer = () => {
       <LowerContainer>
      <SocialIcon>
        <Twitter/>
-       <Instagram/>
+       <GitHub/>
        <Facebook/>
-       <YouTube/>
+       <LinkedIn/>
      </SocialIcon>
        <CopyrightReserve>
         

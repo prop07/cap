@@ -15,7 +15,9 @@ import {
   Close,
 } from "@material-ui/icons";
 
-const Container = styled.div``;
+const Container = styled.div`
+
+`;
 
 const Wrapper = styled.div`
   padding: 10px 20px;
@@ -36,7 +38,9 @@ const SearchContainer = styled.div`
   display: ${(props) => props.display === false && "grid"};
   grid-template-columns: auto max-content;
   width: 90%;
-  padding: 0 0.5rem;
+  justify-self: center;
+
+
 
 `;
 
@@ -49,7 +53,7 @@ const Input = styled.input`
   color: #464646;
   border: none;
   background-color: #f3f3f3;
-  border-radius: 1rem;
+  border-radius: 5px;
   outline: none;
 
   ${mobile({ width: "50px" })}
@@ -118,6 +122,9 @@ const SearchButton = styled.div`
   justify-content: flex-end;
   cursor: pointer;
   color: #353535;
+  &:hover {
+    color: blue;
+  }
 `;
 
 const LinksContainer = styled.div`

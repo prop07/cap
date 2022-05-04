@@ -1,4 +1,4 @@
-import { Close, FileCopyOutlined } from "@material-ui/icons";
+import { Close} from "@material-ui/icons";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const Title = styled.h1`
   font-size: 1.5rem;
-  color: purple;
+  color: #353535;
 `;
 
 const ButtonItem = styled.button`
@@ -21,12 +21,12 @@ const ButtonItem = styled.button`
   border-radius: 5px;
   cursor: pointer;
   margin: 0.5rem 0;
-  border: 1px solid purple;
-  color: ${(props) => (props.bg === "purple" ? "white" : "purple")};
+  border: 1px solid #494949;
+  color: ${(props) => (props.bg === "gray" ? "#ffff" : "#494949")};
   background-color: ${(props) =>
-    props.bg === "purple" ? "purple" : "transparent"};
+    props.bg === "gray" ? "#494949" : "transparent"};
   &:hover {
-    background-color: #570057;
+    background-color: #2e2e2e;
     color: white;
   }
 `;
@@ -62,30 +62,14 @@ const ProductDetail = styled.div`
 `;
 
 const Image = styled.img`
+object-fit: contain;
   height: 200px;
   width: 200px;
   margin: auto;
   border-radius: 10px;
 `;
 
-const Info = styled.div`
-  background-color: #ffd6ff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  text-align: center;
 
-`;
-const InfoTitle = styled.h2`
-  color: purple;
-`;
-const InfoDetail = styled.p`
-  color: purple;
-  padding: 0.5rem 0;
-`;
-const InfoTerm = styled.div`
-  color: black;
-  font-size: 0.8rem;
-`;
 
 const ProductTitle = styled.h3`
   margin-bottom: 0.7rem;
@@ -108,7 +92,6 @@ const Price = styled.p`
   grid-template-columns: 80px auto;
 `;
 
-const Fieldset = styled.fieldset``;
 
 const Right = styled.fieldset`
   display: grid;
@@ -121,10 +104,6 @@ const Legend = styled.legend`
   padding: 0.5rem;
 `;
 
-const A = styled.a`
-  color: black;
-  font-weight: bold;
-`;
 
 const Select = styled.select`
   background-color: transparent;
@@ -136,18 +115,7 @@ const OrderDetail = styled.div`
   font-size: 1.5rem;
 `;
 
-const Input = styled.input`
-  border: none;
-  background-color: transparent;
-  width: 100%;
-  font-size: 1.5rem;
-  margin: 0.2rem 0;
-  text-align: center;
-  color: gray;
-  &:focus {
-    outline: none;
-  }
-`;
+
 
 const Summary = styled.div`
   text-align: center;
@@ -163,38 +131,15 @@ const ShippingInfo = styled.p`
   color: gray;
 `;
 
-const LegendCoupon = styled.legend`
-  padding: 0 0.2rem;
-`;
 
-const ButtonCoupon = styled.button`
-  border: 1px solid purple;
-  padding: 0.7rem;
-  margin: 0.25rem;
-  align-self: end;
-  border-radius: 5px;
-  color: white;
-  background-color: purple;
-  &:hover {
-    cursor: pointer;
-  }
-`;
 
-const CouponContainer = styled.div`
-  display: grid;
-  grid-template-columns: auto max-content;
-`;
 
 const Option = styled.option``;
 const Label = styled.label``;
 const LeftSide = styled.div``;
 const RightSide = styled.div``;
 
-const PromoCode = styled.span`
-  font-weight: bold;
-  color: black;
-  cursor: pointer;
-`;
+
 const RemoveButton = styled.button`
   position: absolute;
   right: 0%;
@@ -205,7 +150,7 @@ const RemoveButton = styled.button`
   border: none;
   transition: all 0.1s ease;
   &:hover {
-    color: #540054;
+    color: #000000;
     transform: scale(1.1);
     cursor: pointer;
   }
@@ -228,26 +173,14 @@ const Cart = () => {
       <Title>YOUR CART ( 1 )</Title>
       <CartContainer>
         <Left>
-          <Hr />
-          <Info>
-            <InfoTitle>15% OFF ALL FURNITURE</InfoTitle>
-            <InfoDetail>
-              Apply promo code{" "}
-              <PromoCode onClick={copyText}>
-                {promocode} <FileCopyOutlined style={{ fontSize: "1rem" }} />{" "}
-              </PromoCode>{" "}
-              to get the discount.
-            </InfoDetail>
-            <InfoTerm>
-              Offer ends 25th May. <A href="#">T&C Apply</A>
-            </InfoTerm>
-          </Info>
+         
           <Hr />
           <Product>
+            {/* Product */}
             <ProductDetail>
-              <Image src="https://image.zanui.com.au/data/product/24/6881/639073.jpg" />
+              <Image src="https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg" />
               <ProductInfo>
-                <ProductTitle>Cuppa Entertainment Unit</ProductTitle>
+                <ProductTitle>Niki123</ProductTitle>
                 <Color>
                   <LeftSide>Color:</LeftSide>
                   <RightSide>
@@ -278,11 +211,11 @@ const Cart = () => {
                 <Close style={Icon} />
               </RemoveButton>
             </ProductDetail>
-
-            <ProductDetail>
-              <Image src="https://image.zanui.com.au/data/product/24/6881/639073.jpg" />
+{/* another product details */}
+<ProductDetail>
+              <Image src="https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg" />
               <ProductInfo>
-                <ProductTitle>Cuppa Entertainment Unit</ProductTitle>
+                <ProductTitle>Niki123 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, vitae.</ProductTitle>
                 <Color>
                   <LeftSide>Color:</LeftSide>
                   <RightSide>
@@ -313,6 +246,7 @@ const Cart = () => {
                 <Close style={Icon} />
               </RemoveButton>
             </ProductDetail>
+            {/* product */}
           </Product>
         </Left>
         <Right>
@@ -322,21 +256,14 @@ const Cart = () => {
               Total: <b>$518</b>
             </OrderDetail>
             <OrderInfo>( inclusive of GST )</OrderInfo>
-            <Hr />
-            <CouponContainer>
-              <Fieldset>
-                <LegendCoupon>Coupon Code</LegendCoupon>
-                <Input />
-              </Fieldset>
-              <ButtonCoupon>APPLY</ButtonCoupon>
-            </CouponContainer>
+           
           </Summary>
           <Hr />
           <ShippingInfo>
             Shipping costs will be calculated at checkout.
           </ShippingInfo>
           <Hr />
-          <ButtonItem bg="purple">CHECKOUT NOW</ButtonItem>
+          <ButtonItem bg="gray">CHECKOUT NOW</ButtonItem>
           <ButtonItem bg="transparent">CONTINUE SHOPPING</ButtonItem>
         </Right>
       </CartContainer>

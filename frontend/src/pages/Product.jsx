@@ -13,10 +13,8 @@ import { mobile } from "../responsive";
 
 //style
 const Container = styled.div`
-max-width: 1500px;
-  margin: auto;
-  display: flex;
-  margin: auto;
+display: flex;
+justify-content: center;
 `;
 
 const ProductImage = styled.img`
@@ -32,7 +30,8 @@ const ProductInfo = styled.div`
   padding: 5rem;
 `;
 
-const ProductDetail = styled.div``;
+const ProductDetail = styled.div`
+`;
 const ProductName = styled.h4`
   text-transform: capitalize;
   color: #494949;
@@ -305,9 +304,9 @@ const Product = () => {
       </Container>
       <ProductDetail>
         <ProductDetailNavbar>
-          <TitleDescription backgroung={description} onClick={()=>handleProductDetail("desc")}>Description</TitleDescription>
-          <TitleSpecification backgroung={specification} onClick={()=>handleProductDetail("spec")}>Specification</TitleSpecification>
-          <TitleShippingAndPayment backgroung={ShippingAndPayment} onClick={()=>handleProductDetail("ship")}>Shipping and payment</TitleShippingAndPayment>
+          <TitleDescription backgroung="description" onClick={()=>handleProductDetail("desc")}>Description</TitleDescription>
+          <TitleSpecification backgroung="specification" onClick={()=>handleProductDetail("spec")}>Specification</TitleSpecification>
+          <TitleShippingAndPayment backgroung="ShippingAndPayment" onClick={()=>handleProductDetail("ship")}>Shipping and payment</TitleShippingAndPayment>
         </ProductDetailNavbar>
         <Discription display={description}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi

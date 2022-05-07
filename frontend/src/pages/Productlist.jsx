@@ -9,7 +9,6 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 2rem;
-  height: 26rem;
 
   ${mobile({ gridTemplateColumns:"repeat(2,1fr)" })};
 

@@ -121,7 +121,8 @@ const SearchButton = styled.div`
   align-items: center;
   justify-content: flex-end;
   cursor: pointer;
-  color: #353535;
+  color: #6d6d6d;
+
   &:hover {
     color: blue;
   }

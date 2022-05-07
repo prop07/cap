@@ -14,35 +14,26 @@ const Container = styled.div`
   }
 `;
 const Title = styled.h2`
-color: #303030;
+  color: #303030;
   text-align: center;
   font-size: 24px;
   line-height: 32px;
-  
+
   margin: 0.5rem;
 `;
-const ProductList = styled.div`
-color:#353535;
 
-  &:hover {
-    color: #476085;
-  }
-`;
 const ProductImage = styled.img`
-/* filter: drop-shadow(1px 1px 2px black); */
 
   margin: 5px;
   object-fit: contain;
   cursor: pointer;
   height: 17rem;
   width: 17rem;
-  border-top-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  transition: all 0.3s ease;
-
+ transition: 0.2s ease;
   &:hover {
-    height: 18rem;
-    width: 18rem;
+ transform: scale(1.05);
+
+   
   }
 `;
 
@@ -51,10 +42,16 @@ const ProductName = styled.h4`
 `;
 
 const Product = styled.div`
-  width: 18rem;
+ 
   display: flex;
   flex-direction: column;
   justify-items: center;
+  color: #353535;
+
+  &:hover {
+    color: #476085;
+    text-decoration: underline;
+  }
 `;
 
 const ProductPrice = styled.div``;
@@ -69,40 +66,93 @@ const ProductStar = styled.span`
 `;
 
 const Popularproduct = () => {
-  const PopularProduct = [];
-  for (let i = 0; i <= 10; i++) {
-    PopularProduct.push(
-      <ProductList>
-        <Product>
-          <ProductImage 
-            src="https://cdn.shopify.com/s/files/1/0225/6679/products/quicksquarenew_202087225936568_1024x1024.jpg?v=1596805381"
-            alt="jordan"
-          />
-          <ProductName>nike1234</ProductName>
-          <ProductPrice>RS 300.77/-</ProductPrice>
-          <ProductRating>
-            <ProductStar>
-              <Star />
-              <Star />
-              <Star />
-              <StarHalf />
-              <StarOutline />
-             
-            </ProductStar>
+  const productdata = [
+    {
+      id: 1,
+      name: "nike1",
+      link: "https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg",
+      price: "30",
+    },
+    {
+      id: 2,
+      name: "nike2",
+      link: "https://m.media-amazon.com/images/I/61t0DD0FrSL._AC_SY575._SX._UX._SY._UY_.jpg",
+      price: "40.99",
+    },
 
-            (3.6)
-          </ProductRating>
-        </Product>
-      </ProductList>
-    );
-  }
+    {
+      id: 3,
+      name: "nike3",
+      link: "https://m.media-amazon.com/images/I/611lAiLMLWL._AC_UX575_.jpg",
+      price: "50.77",
+    },
+    {
+      id: 1,
+      name: "nike1",
+      link: "https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg",
+      price: "30",
+    },
+    {
+      id: 2,
+      name: "nike2",
+      link: "https://m.media-amazon.com/images/I/61t0DD0FrSL._AC_SY575._SX._UX._SY._UY_.jpg",
+      price: "40.99",
+    },
+
+    {
+      id: 3,
+      name: "nike3",
+      link: "https://m.media-amazon.com/images/I/611lAiLMLWL._AC_UX575_.jpg",
+      price: "50.77",
+    },
+    {
+      id: 1,
+      name: "nike1",
+      link: "https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg",
+      price: "30",
+    },
+    {
+      id: 2,
+      name: "nike2",
+      link: "https://m.media-amazon.com/images/I/61t0DD0FrSL._AC_SY575._SX._UX._SY._UY_.jpg",
+      price: "40.99",
+    },
+
+    {
+      id: 3,
+      name: "nike3",
+      link: "https://m.media-amazon.com/images/I/611lAiLMLWL._AC_UX575_.jpg",
+      price: "50.77",
+    },
+  ];
+
+ 
   return (
     <div>
-      <Title>
-        Popular Product
-       
-      </Title>
-      <Container>{PopularProduct}</Container>
+      <Title>Popular Product</Title>
+      <Container>
+
+        {productdata.map((item) => (
+          <Product>
+            <ProductImage
+              src={item.link}
+              alt={item.name}
+            />
+            <ProductName>{item.name}</ProductName>
+            <ProductPrice>RS{item.price}/-</ProductPrice>
+            <ProductRating>
+              <ProductStar>
+                <Star />
+                <Star />
+                <Star />
+                <StarHalf />
+                <StarOutline />
+              </ProductStar>
+              (3.6)
+            </ProductRating>
+          </Product>
+        ))}
+      </Container>
     </div>
   );
 };

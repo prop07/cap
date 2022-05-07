@@ -10,11 +10,10 @@ import {
 } from "@material-ui/icons";
 import { mobile } from "../responsive";
 
-
 //style
 const Container = styled.div`
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 `;
 
 const ProductImage = styled.img`
@@ -30,8 +29,7 @@ const ProductInfo = styled.div`
   padding: 5rem;
 `;
 
-const ProductDetail = styled.div`
-`;
+const ProductDetail = styled.div``;
 const ProductName = styled.h4`
   text-transform: capitalize;
   color: #494949;
@@ -65,7 +63,7 @@ const FilterTitle = styled.h4`
 
 const FilterSelect = styled.select`
   color: #383838;
-
+text-transform: capitalize;
   height: 4rem;
   width: 25rem;
   font-size: 20px;
@@ -78,6 +76,7 @@ const FilterSelect = styled.select`
 `;
 
 const FilterOption = styled.option`
+text-transform: capitalize;
   cursor: pointer;
 `;
 const Button = styled.button`
@@ -130,44 +129,37 @@ const ProductSubImage = styled.img`
   }
 `;
 const ProductDetailNavbar = styled.div`
-  background-color: #f5f5f5;
+  border-top: 2px ridge #eaeaea;
+  background-color: #eaeaea;
   mask: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, transparent 100%);
-  padding: 1rem;
   display: flex;
   flex-direction: row;
   text-align: center;
   font-size: 18px;
   line-height: 30px;
   cursor: pointer;
-
 `;
 
 const TitleDescription = styled.div`
-background-color: ${(props) => props.background === true && "#ffffff"};
-  padding: 0.5rem;
- 
+  padding: 1rem;
+
   &:hover {
     text-decoration: underline;
-} 
+  }
 `;
 const TitleSpecification = styled.div`
-background-color: ${(props) => props.background === true && "#ffffff"};
+  padding: 1rem;
 
-  padding: 0.5rem;
- 
   &:hover {
     text-decoration: underline;
-  } 
+  }
 `;
 const TitleShippingAndPayment = styled.div`
-background-color: ${(props) => props.background === true && "#ffffff"};
+  padding: 1rem;
 
-  padding: 0.5rem;
- 
   &:hover {
     text-decoration: underline;
-    
-  } 
+  }
 `;
 
 const Discription = styled.div`
@@ -179,12 +171,11 @@ const Discription = styled.div`
   line-height: 20px;
   padding: 1rem;
   min-height: 15rem;
-
 `;
 
 const Specification = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   display: ${(props) => props.display === true && "flex"};
   display: ${(props) => props.display === false && "none"};
   padding: 1rem;
@@ -202,7 +193,6 @@ const ShippingAndPayment = styled.div`
   line-height: 20px;
   padding: 1rem;
   min-height: 15rem;
-
 `;
 
 const Li = styled.li`
@@ -215,6 +205,50 @@ const Product = () => {
   const [description, setDescription] = useState(true);
   const [specification, setSpecification] = useState(false);
   const [shippingandpayment, setShippingandpayment] = useState(false);
+  const [productImage, setProductImage] = useState(0);
+
+  const productdetail = [
+    {
+      id: 1,
+      name: "lorem4",
+      price: "20",
+      color: ["red", "green", "blue","yellow","green"],
+
+      rating: 3.6,
+      quantity: 20,
+      description:
+        "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make ",
+      specification: [
+        "lorem20",
+        "e are many variations of passages of Lorem Ipsum available, but the ",
+        "e are many variations of passages of Lorem Ipsum available, but the ",
+      ],
+      shippingandpayment:
+        "There are many variations of passages of Lorem Ipsum available, but the ",
+    },
+  ];
+
+
+
+
+  const imagedata = [
+    {
+      id: 1,
+      name: "nike1",
+      link: "https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg",
+    },
+    {
+      id: 2,
+      name: "nike2",
+      link: "https://m.media-amazon.com/images/I/61t0DD0FrSL._AC_SY575._SX._UX._SY._UY_.jpg",
+    },
+
+    {
+      id: 3,
+      name: "nike3",
+      link: "https://m.media-amazon.com/images/I/611lAiLMLWL._AC_UX575_.jpg",
+    },
+  ];
 
   function handleProductDetail(option) {
     switch (option) {
@@ -234,36 +268,43 @@ const Product = () => {
         setSpecification(false);
         break;
     }
+
+    
+  //   const totalquantity = productdetail[0].quantity;
+  // const Quantity = [];
+
+
+  //   const PopularProduct = [];
+  //   for (let i = 0; i <= 10; i++) {
+  //     Quantity.push(
+  //       <FilterOption>{i}</FilterOption>
+       
+  //     );
+  //   }
+
+
   }
 
   return (
     <div>
       <Container>
         <ProductImageContainer>
-          <ProductImage
-            src="https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg"
-            alt="jordan"
-          />
+          <ProductImage src={imagedata[productImage].link} alt={imagedata[productImage].link}/>
           <ProductImageList>
-            <ProductSubImage
-              src="  https://m.media-amazon.com/images/I/61t0DD0FrSL._AC_SY575._SX._UX._SY._UY_.jpg"
-              alt="jordan"
-            />
-            <ProductSubImage
-              src="https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg"
-              alt="jordan"
-            />
-            <ProductSubImage
-              src="https://m.media-amazon.com/images/I/611lAiLMLWL._AC_UX575_.jpg"
-              alt="jordan"
-            />
+            {imagedata.map((item, index) => (
+              <ProductSubImage
+                onClick={() => setProductImage(index)}
+                src={item.link}
+                alt={item.name}
+              />
+            ))}
           </ProductImageList>
         </ProductImageContainer>
 
         <ProductInfo>
-          <ProductName>nike1234</ProductName>
+          <ProductName>{productdetail[0].name}</ProductName>
           <ProductPriceAndRating>
-            <ProductPrice>RS 300.77/-</ProductPrice>
+            <ProductPrice>RS {productdetail[0].price}/-</ProductPrice>
             <ProductRating>
               <ProductStar>
                 <Star />
@@ -279,22 +320,26 @@ const Product = () => {
           <Filter>
             <FilterTitle>Color</FilterTitle>
             <FilterSelect name="color">
-              {/* dummy color */}
-              <FilterOption>White</FilterOption>
-              <FilterOption>Black</FilterOption>
-              <FilterOption>Gray</FilterOption>
-              {/* dummy color  */}
+              {productdetail[0].color.map((index)=>
+               <FilterOption id={index}>{[index]}</FilterOption>
+              
+              )}
+             
             </FilterSelect>
           </Filter>
 
           <Filter>
             <FilterTitle>Quantity</FilterTitle>
             <FilterSelect name="quantity">
-              {/* dummy color */}
-              <FilterOption>1</FilterOption>
-              <FilterOption>2</FilterOption>
-              <FilterOption>3</FilterOption>
-              {/* dummy color  */}
+              {/* {for(let i=1;i=<productdetail[0].quantity;i++){
+
+                <FilterOption>{i}</FilterOption>
+
+              }
+              } */}
+         
+            <FilterOption>1</FilterOption>
+             
             </FilterSelect>
           </Filter>
           <Button type="submit">
@@ -304,49 +349,41 @@ const Product = () => {
       </Container>
       <ProductDetail>
         <ProductDetailNavbar>
-          <TitleDescription backgroung="description" onClick={()=>handleProductDetail("desc")}>Description</TitleDescription>
-          <TitleSpecification backgroung="specification" onClick={()=>handleProductDetail("spec")}>Specification</TitleSpecification>
-          <TitleShippingAndPayment backgroung="ShippingAndPayment" onClick={()=>handleProductDetail("ship")}>Shipping and payment</TitleShippingAndPayment>
+          <TitleDescription
+            style={description ? { backgroundColor: "white" } : {}}
+            onClick={() => handleProductDetail("desc")}
+          >
+            Description
+          </TitleDescription>
+          <TitleSpecification
+            style={specification ? { backgroundColor: "white" } : {}}
+            background="specification"
+            onClick={() => handleProductDetail("spec")}
+          >
+            Specification
+          </TitleSpecification>
+          <TitleShippingAndPayment
+            style={shippingandpayment ? { backgroundColor: "white" } : {}}
+            background="ShippingAndPayment"
+            onClick={() => handleProductDetail("ship")}
+          >
+            Shipping and payment
+          </TitleShippingAndPayment>
         </ProductDetailNavbar>
         <Discription display={description}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-          vitae eum quidem. Tempore officiis minima iure quisquam magnam
-          assumenda nihil unde? Eius nam aspernatur porro! Sunt atque similique
-          odit architecto?Lorem, ipsum dolor sit amet consectetur adipisicing
-          elit. Deleniti minus doloribus pariatur consequatur ipsa
-          necessitatibus totam illo, vero porro recusandae laborum quam
-          assumenda nobis accusamus! Beatae, ducimus dolores deleniti nemo aut
-          animi soluta vel ratione qui ea, temporibus accusamus et
-          exercitationem similique quasi quia corporis repudiandae sunt eius
-          maiores.
+      {  productdetail[0].description}
         </Discription>
         <Specification display={specification}>
-          <Li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
-            recusandae!
-          </Li>
-          <Li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
-            corporis.
-          </Li>
-          <Li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-            odio.
-          </Li>
-          <Li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam,
-            laborum?
-          </Li>
-          <Li>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
-            dolores.
-          </Li>
+
+        {productdetail[0].specification.map((index)=>
+                <Li id={index}>{index}</Li>
+              
+              )}
+        
         </Specification>
         <ShippingAndPayment display={shippingandpayment}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim tenetur
-          velit nulla hic sequi repellendus laboriosam vero autem quibusdam.
-          Similique perferendis dolores voluptatibus minima temporibus. Optio
-          aut harum tenetur doloribus?
+      {  productdetail[0].shippingandpayment}
+         
         </ShippingAndPayment>
       </ProductDetail>
     </div>

@@ -157,10 +157,27 @@ const RemoveButton = styled.button`
 `;
 
 const Cart = () => {
-  const promocode = "DELSUR2022";
-  const copyText = () => {
-    navigator.clipboard.writeText(promocode);
-  };
+  const cartdata = [
+    {
+      id: 1,
+      name: "nike1",
+      link: "https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg",
+      price: "30",
+      color:"gray",
+      quantity:"2"
+    },
+    {
+      id: 2,
+      name: "nike2",
+      link: "https://m.media-amazon.com/images/I/61t0DD0FrSL._AC_SY575._SX._UX._SY._UY_.jpg",
+      price: "40",
+      color:"black",
+      quantity:"5"
+
+
+    },
+
+  ];
   const Icon = {
     fontSize: "2.5rem",
     position: "absolute",
@@ -168,86 +185,57 @@ const Cart = () => {
     right: 10,
   };
 
+
   return (
     <Container>
-      <Title>YOUR CART ( 1 )</Title>
+      <Title>YOUR CART (2)</Title>
       <CartContainer>
         <Left>
          
           <Hr />
           <Product>
+          
             {/* Product */}
+            {cartdata.map((item)=>(
             <ProductDetail>
-              <Image src="https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg" />
-              <ProductInfo>
-                <ProductTitle>Niki123</ProductTitle>
-                <Color>
-                  <LeftSide>Color:</LeftSide>
-                  <RightSide>
-                    <b>Light Brown</b>
-                  </RightSide>
-                </Color>
-                <Price>
-                  <LeftSide>Total:</LeftSide>
-                  <RightSide>
-                    <b>$278.9</b>
-                  </RightSide>
-                </Price>
-                <Quantity>
-                  <LeftSide>
-                    <Label for="quantity">Quantity: </Label>
-                  </LeftSide>
-                  <RightSide>
-                    <Select name="quantity" id="quantity">
-                      <Option value="1">1</Option>
-                      <Option value="2">2</Option>
-                      <Option value="3">3</Option>
-                      <Option value="4">4</Option>
-                    </Select>
-                  </RightSide>
-                </Quantity>
-              </ProductInfo>
-              <RemoveButton>
-                <Close style={Icon} />
-              </RemoveButton>
-            </ProductDetail>
-{/* another product details */}
-<ProductDetail>
-              <Image src="https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg" />
-              <ProductInfo>
-                <ProductTitle>Niki123 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, vitae.</ProductTitle>
-                <Color>
-                  <LeftSide>Color:</LeftSide>
-                  <RightSide>
-                    <b>Light Brown</b>
-                  </RightSide>
-                </Color>
-                <Price>
-                  <LeftSide>Total:</LeftSide>
-                  <RightSide>
-                    <b>$278.9</b>
-                  </RightSide>
-                </Price>
-                <Quantity>
-                  <LeftSide>
-                    <Label for="quantity">Quantity: </Label>
-                  </LeftSide>
-                  <RightSide>
-                    <Select name="quantity" id="quantity">
-                      <Option value="1">1</Option>
-                      <Option value="2">2</Option>
-                      <Option value="3">3</Option>
-                      <Option value="4">4</Option>
-                    </Select>
-                  </RightSide>
-                </Quantity>
-              </ProductInfo>
-              <RemoveButton>
-                <Close style={Icon} />
-              </RemoveButton>
-            </ProductDetail>
-            {/* product */}
-          </Product>
+            <Image src={item.link} alt={item.name}/>
+            <ProductInfo>
+              <ProductTitle>{item.name}</ProductTitle>
+              <Color>
+                <LeftSide>Color:</LeftSide>
+                <RightSide>
+                  <b>{item.color}</b>
+                </RightSide>
+              </Color>
+              <Price>
+                <LeftSide>Total:</LeftSide>
+                <RightSide>
+                  <b >Rs:{item.quantity*item.price}/-</b>
+                </RightSide>
+              </Price>
+              <Quantity>
+                <LeftSide>
+                  <Label for="quantity">Quantity:</Label>
+                </LeftSide>
+                <RightSide>
+                  <Select name="quantity" id="quantity">
+                  <Option value="4">{item.quantity}</Option>
+                    <Option value="1">1</Option>
+                    <Option value="2">2</Option>
+                    <Option value="3">3</Option>
+                   
+                  </Select>
+                </RightSide>
+              </Quantity>
+            </ProductInfo>
+            <RemoveButton>
+              <Close style={Icon} />
+            </RemoveButton>
+          </ProductDetail>
+        ))}
+           
+
+        </Product>
         </Left>
         <Right>
           <Legend>Order Summary</Legend>

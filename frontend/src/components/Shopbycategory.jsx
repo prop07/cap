@@ -22,7 +22,6 @@ const Title = styled.h2`
 `;
 
 const CategoryImage = styled.img`
-  cursor: pointer;
   height: 8rem;
   width: 8rem;
   border-radius: 50%;
@@ -42,6 +41,7 @@ const CategoryName = styled.h4`
 `;
 
 const Category = styled.div`
+  cursor: pointer;
 
   width: 9rem;
 

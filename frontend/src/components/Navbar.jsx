@@ -169,7 +169,7 @@ const Navbar = () => {
               <Help />
             </MenuItem>
           </Link>
-          <Link to="/account/">
+          <Link to="/profile/">
             <MenuItem>
               <AccountCircle />
             </MenuItem>

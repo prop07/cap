@@ -164,7 +164,8 @@ const Cart = () => {
       link: "https://m.media-amazon.com/images/I/61qUlaexJ3S._AC_SX395._SX._UX._SY._UY_.jpg",
       price: "30",
       color:"gray",
-      quantity:"2"
+      quantity:"2",
+      
     },
     {
       id: 2,

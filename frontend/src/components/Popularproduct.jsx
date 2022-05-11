@@ -26,7 +26,6 @@ const ProductImage = styled.img`
 
   margin: 5px;
   object-fit: contain;
-  cursor: pointer;
   height: 17rem;
   width: 17rem;
  transition: 0.2s ease;
@@ -42,6 +41,7 @@ const ProductName = styled.h4`
 `;
 
 const Product = styled.div`
+  cursor: pointer;
  
   display: flex;
   flex-direction: column;

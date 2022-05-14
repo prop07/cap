@@ -1,5 +1,6 @@
 import email
 from operator import mod
+from pyexpat import model
 from tkinter import CASCADE
 from unicodedata import name
 from django.db import models
@@ -8,10 +9,10 @@ from django.db import models
 
 from unicodedata import category
 from django.db import models
-from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from django.forms import CharField
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
+
 
 
 

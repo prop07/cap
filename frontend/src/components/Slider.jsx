@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight } from "@material-ui/icons";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import axios from "axios";
 
 const Main = styled.div`
   display: flex;
@@ -55,6 +56,17 @@ const ImageWrapper = styled.div`
 `;
 
 const Slider = () => {
+  // fetch('http://127.0.0.1:8000/api/slider/')
+  // .then(response => response.json())
+  // .then(data => console.log(data));
+  
+
+  // React.useEffect(
+  //   axios.get("http://127.0.0.1:8000/api/slider/", (res) => {
+  //     res.json()
+  //   }).then(data => console.log(data))
+  // )
+ 
   const data = [
     {
       id: 1,

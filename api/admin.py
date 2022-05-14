@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import Address, Category, CategoryProduct, Color, ProductType, Product, ProductImage, Review, Order, OrderItem, Slider
 
 # Register your models here.

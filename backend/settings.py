@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'corsheaders',
     'rest_framework',
-    'api.apps.ApiConfig',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +60,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR],
+        'DIRS': [BASE_DIR/"templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,6 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ALLOWED_ORIGINS = [
+    
     "https://example.com",
     "https://sub.example.com",
     "http://localhost:3000",
